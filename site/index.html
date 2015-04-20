@@ -580,6 +580,11 @@
     ga('create', 'UA-62041581-1', 'auto');
     ga('send', 'pageview');
 
+    jQuery(".nav li a").on("mousedown", function(){
+        var menuName = this.href.split('#');
+        ga('send', 'pageview', menuName[1]);
+    });
+
 </script>
 </body>
 </html>
