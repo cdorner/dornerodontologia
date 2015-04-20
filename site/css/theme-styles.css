@@ -95,6 +95,11 @@ position: relative;
 padding-top:50px;
 padding-bottom:50px;
 }
+
+#slides {
+    height: 500px !important;
+}
+
 .parallax {
 position: absolute;
 background-attachment: fixed;

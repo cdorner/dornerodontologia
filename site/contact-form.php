@@ -1,6 +1,6 @@
 <?php
 // ADD YOUR INFOMATION HERE
-$recipient = "YourEmail@Domain.com";
+$recipient = "christian.dorner@gmail.com";
 $successPage = "index.html";
 
 // NO NEED TO EDIT ANYTHING BELOW THIS LINE =====================//
@@ -11,7 +11,6 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
-
 
 $name=stripslashes($name);
 $email=stripslashes($email);

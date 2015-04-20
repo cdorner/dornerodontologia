@@ -45,7 +45,7 @@ $(window).load(function() {
  })(jQuery);
    // ========== END ACTIVE CLASS ========== // 
 	
-
+/*
     // ========== 3. START STYLE SWITCH ========== //
     (function($) { "use strict";
  $(document).ready(function(){
@@ -58,7 +58,9 @@ $(window).load(function() {
 });
  })(jQuery);
    // ========== END STYLE SWITCH ========== //
+*/
 
+/*
 	   // ========== 4. START BOOTSTRAP CAROUSEL ========== //
 	 (function($) { "use strict";
 $('.carousel').carousel({
@@ -67,7 +69,9 @@ $('.carousel').carousel({
 });
  })(jQuery);
 		   // ========== END BOOTSTRAP CAROUSEL ========== //
-	
+
+*/
+
  // ========== 5. START SCROLL TO TOP ========== //
  // Button
  (function($) { "use strict";
@@ -142,8 +146,9 @@ $("a.scrollto[href^='#']").on('click', function(e) {
  })(jQuery);
  // ========== END SCROLL TO SCRIPT ========== //
 
+/*
   // ========== 10. START PARALLAX SETTINGS ========== //
- (function($) { "use strict";
+  (function($) { "use strict";
 				$('.parallax').stellar();
 			$.stellar({
 				horizontalScrolling: false,
@@ -158,7 +163,8 @@ $("a.scrollto[href^='#']").on('click', function(e) {
 			});
 		 })(jQuery);
   // ========== END PARALLAX SETTINGS ========== //
-  
+  */
+
     // ========== 11. BOOTSTRAP ACCORDION SETTINGS ========== //
 (function($) { "use strict";
 var $accordion = $('#accordion .panel a');
@@ -178,7 +184,7 @@ $('#accordion .panel a').on('click',function(e){
 	    $(document).ready(function() {
      
     $("#team-slider").owlCarousel({
-items: 4,
+items: 1,
 itemsScaleUp: true,
 autoPlay: false,
 stopOnHover: true
