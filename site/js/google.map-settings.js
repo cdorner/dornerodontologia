@@ -4,15 +4,22 @@ var myLatLng = new google.maps.LatLng(-23.22987,-45.915828);
 
 var mapOptions = {
     zoom: 14,
+    //disableDefaultUI: true,
+    scrollwheel: false,
+    zoomControl: true,
     center: myLatLng,
-	disableDefaultUI: true,
-	scrollwheel: false,
-    navigationControl: false,
-    mapTypeControl: false,
-    scaleControl: false,
-    draggable: false,
+    //navigationControl: false,
+    mapTypeControl: true,
+    //scaleControl: true,
+    //draggable: true,
     mapTypeControlOptions: {
-    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'roadatlas']
+        style: google.maps.MapTypeControlStyle.DEFAULT,
+        mapTypeIds: [
+            google.maps.MapTypeId.ROADMAP
+        ]
+    },
+    zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL
     }
   };
 
