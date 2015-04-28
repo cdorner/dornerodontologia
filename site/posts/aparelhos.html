@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" ng-app="main">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
@@ -29,49 +29,16 @@
     <link href="../css/theme-styles.min.css" media="screen" rel="stylesheet" type="text/css">
     <link id="style-switch" href="../css/color-schemes/default.min.css" media="screen" rel="stylesheet" type="text/css">
 </head>
-<body data-offset="85" data-spy="scroll" data-target=".navbar">
+<body data-offset="85" data-spy="scroll" data-target=".navbar" ng-controller="Controller">
 <!-- ===== PAGE LOADER GRAPHIC ===== -->
 <div id="pageloader">
     <div class="loader-img">
         <img alt="loader" src="../img/loader.gif"/>
     </div>
 </div>
-<!-- ======================================== -->
-<!-- ============ START TOP STICKY MENU ========== -->
-<!-- ======================================== -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
 
-            <a class="navbar-brand weight-900" href="#home"><img alt="logo" id="logo" src="../img/logo.png"></a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="main-menu">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a class="scrollto" href="../index.html">Home</a></li>
-                <li><a href="../index.html" class="scrollto">Tratamentos</a></li>
-                <li><a class="scrollto" href="../index.html">Doutora</a></li>
-                <li><a class="scrollto" href="../index.html">Contato</a></li>
-                <li><a class="scrollto" href="../blog.html">Blog</a></li>
-                <li>
-                    <div class="social-icons">
-                        <a href="#"><i class="im-twitter"></i></a><a
-                            href="https://www.facebook.com/pages/Dorner-Odontologia/526891830785773?ref=ts&fref=ts"
-                            target="_blank"><i class="im-facebook"></i></a><a
-                            href="https://plus.google.com/u/0/105144424644399131989/about" target="_blank"><i
-                            class="im-google-plus"></i></a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
-<!-- ======================================== -->
-<!-- ============ END TOP STICKY MENU =========== -->
-<!-- ======================================== -->
+<div ng-include="'menu.html'"></div>
+
 <div class="fullwidth-section" id="bread-crumb" style="background-color: #F5F5F5">
     <!-- Breadcrumb -->
     <div class="container">
@@ -155,16 +122,18 @@
                         <p>&nbsp; </p>
 
                         <p>&nbsp; </p>
+                        <p>&nbsp; </p>
+
+                        <div ng-include="'saber-mais.html'"></div>
 
                         <hr/>
 
                         <h4 class="uppercase">Compartilhe:</h4>
 
                         <div class="social-icons">
-                            <a href="#"><i class="im-twitter"></i></a>
-                            <a href="#"><i class="im-facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://www.dornerodontologia.com.br/posts/aparelhos.html&title=Aparelhos', 'width=600, height=400')"></i></a>
-                            <a href="#"><i class="im-google-plus"></i></a>
-                            <a href="#"><i class="im-instagram"></i></a>
+                            <a href="#"><i class="im-twitter" onclick="window.open('https://twitter.com/home?status=https://plus.google.com/share?url=http://www.dornerodontologia.com.br/posts/aparelhos.html')"></i></a>
+                            <a href="#"><i class="im-facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=http://www.dornerodontologia.com.br/posts/aparelhos.html')"></i></a>
+                            <a href="#"><i class="im-google-plus" onclick="window.open('https://plus.google.com/share?url=http://www.dornerodontologia.com.br/posts/aparelhos.html')"></i></a>
                         </div>
                         <hr/>
                     </div>
@@ -176,35 +145,14 @@
 
                 <!--End Comments Section -->
                 <!-- Sidebar Section -->
+                <div ng-include="'contact.html'"></div>
 
             </div>
         </div>
     </div>
-    <!-- ================================================== -->
-    <!-- =============== START FOOTER SECTION ================ -->
-    <!-- ================================================== -->
-    <div class="footer">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 text-left">
-                    Copyright ©2014 Dorner Odontologia - Todos os direitos reservados
-                </div>
-                <div class="col-md-6 text-right">
-                    <div class="social-icons">
-                        <a href="#"><i class="im-twitter"></i></a><a
-                            href="https://www.facebook.com/pages/Dorner-Odontologia/526891830785773?ref=ts&fref=ts"><i
-                            class="im-facebook"></i></a><a
-                            href="https://plus.google.com/u/0/105144424644399131989/about" target="_blank"><i
-                            class="im-google-plus"></i></a><a href="#"><i class="im-pinterest"></i></a><a href="#"><i
-                            class="im-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ======================================== -->
-    <!-- =============== END FOOTER ============== -->
-    <!-- ======================================== -->
+
+    <div ng-include="'footer.html'"></div>
+
     <!-- ================================================== -->
     <!-- ============= START SCROLL TO TOP SCRIPT ============= -->
     <!-- ================================================== -->
@@ -220,7 +168,13 @@
     <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
     <script type="text/javascript" src="../js/theme-scripts.js"></script>
+    <script>
+        angular.module('main', [])
+                .controller('Controller', ['$scope', function($scope) {
+                }]);
+    </script>
     <!-- ==================================== -->
     <!-- ========== END JQUERY SCRIPTS ========== -->
     <!-- ==================================== -->
